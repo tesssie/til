@@ -4,5 +4,5 @@ title: About
 permalink: /about/
 ---
 
-This site is inspired by thoughtbot til project. We learn new things. This is a repo
-to share what I learned, 
+This site is inspired by [thoughtbot til](https://github.com/thoughtbot/til) project to share
+to share what I learned every day.
