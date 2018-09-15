@@ -16,7 +16,7 @@
 title: Today I learned
 email: tessyjoseph1999@gmailcom
 description: >- # this means to ignore newlines until "baseurl:"
-  This site is inspired by thoughtbot til https://github.com/thoughtbot/til.
+  This site is inspired by thoughtbot [til](https://github.com/thoughtbot/til).
   This blog is to share what I share what i learned everyday.
 baseurl: /til # the subpath of your site, e.g. /blog
 url: https://github.com/tessie # the base hostname & protocol for your site, e.g. http://example.com
