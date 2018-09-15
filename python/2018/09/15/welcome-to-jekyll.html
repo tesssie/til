@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Understanding python parallel assignment | Today I learned</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Understanding python parallel assignment" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="parallel assignment parallel assignment is the process of assigning more than one variable in parallel." />
+<meta property="og:description" content="parallel assignment parallel assignment is the process of assigning more than one variable in parallel." />
+<link rel="canonical" href="https://github.com/tessie/python/2018/09/15/welcome-to-jekyll.html" />
+<meta property="og:url" content="https://github.com/tessie/python/2018/09/15/welcome-to-jekyll.html" />
+<meta property="og:site_name" content="Today I learned" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-09-15T11:46:03+05:30" />
+<script type="application/ld+json">
+{"description":"parallel assignment parallel assignment is the process of assigning more than one variable in parallel.","@type":"BlogPosting","url":"https://github.com/tessie/python/2018/09/15/welcome-to-jekyll.html","headline":"Understanding python parallel assignment","dateModified":"2018-09-15T11:46:03+05:30","datePublished":"2018-09-15T11:46:03+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"https://github.com/tessie/python/2018/09/15/welcome-to-jekyll.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://github.com/tessie/feed.xml" title="Today I learned" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Today I learned</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Understanding python parallel assignment</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-09-15T11:46:03+05:30" itemprop="datePublished">Sep 15, 2018
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="parallel-assignment">parallel assignment</h2>
+<p>parallel assignment is the process of assigning more than one variable in parallel.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span></code></pre></figure>
+
+<p>A classic use case of parallel assignment swapping in python. If parallel assignment was not there,
+we would have to use a temporary variable for swapping. With parallel assignment the code is more elegant and readable.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="c">#=&gt; print (2, 1)</span></code></pre></figure>
+
+<h2 id="what-happens-behind-the-scenes">What happens behind the scenes?</h2>
+<p>A tuple is a collection of values separated by commas. tuples have two operations</p>
+<ul>
+  <li>Packing</li>
+  <li>Unpacking</li>
+</ul>
+
+<h3 id="tuple-packing">Tuple packing</h3>
+<p>packing allows to create tuples.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span>
+  <span class="k">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c">#=&gt; print &lt;type 'tuple'&gt;</span></code></pre></figure>
+
+<h3 id="tuple-unpacking">Tuple unpacking</h3>
+<p>Tuples unpacking allows to assign values from tuple to separate variables.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+  <span class="k">print</span> <span class="n">a</span>
+  <span class="c">#=&gt; print 1</span>
+  <span class="k">print</span> <span class="n">b</span>
+  <span class="c">#=&gt; print 2</span></code></pre></figure>
+
+<p>Using python dis module, I am analysing the opcode to understand how it works.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">dis</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
+<span class="k">def</span> <span class="nf">parallel_assignment</span><span class="p">():</span>
+  <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span>
+ <span class="n">dis</span><span class="o">.</span><span class="n">dis</span><span class="p">(</span><span class="n">parallel_assignment</span><span class="p">)</span>  
+<span class="c">#            0 LOAD_GLOBAL              0 (a)</span>
+<span class="c">#            3 LOAD_GLOBAL              1 (b)</span>
+<span class="c">#            6 LOAD_GLOBAL              2 (c)</span>
+<span class="c">#            9 LOAD_GLOBAL              3 (d)</span>
+<span class="c">#            12 BUILD_TUPLE              4</span>
+<span class="c">#            15 UNPACK_SEQUENCE          4</span>
+<span class="c">#            18 STORE_FAST               0 (e)</span>
+<span class="c">#            21 STORE_FAST               1 (f)</span>
+<span class="c">#            24 STORE_FAST               2 (g)</span>
+<span class="c">#            27 STORE_FAST               3 (h)</span>
+<span class="c">#            30 LOAD_CONST               0 (None)</span>
+<span class="c">#            33 RETURN_VALUE</span></code></pre></figure>
+
+<p>The RHS is evaluated first. The BUILD_TUPLE creates a tuple and pushes the result into the stack. Next the LHS is evaluated
+The ‘UNPACK_SEQUENCE’ pops the tuples and pushes each of elements of stack from right to left into stack. STORE_FAST would store the top
+of stack into the variable.</p>
+
+<p>for assignment with two or three variables python would use the stack directly. This is a peephole optimisation in python.
+Analysing using dis.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">dis</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
+<span class="k">def</span> <span class="nf">parallel_assignment</span><span class="p">():</span>
+  <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>
+  <span class="k">print</span> <span class="n">dis</span><span class="o">.</span><span class="n">dis</span><span class="p">(</span><span class="n">parallel_assignment</span><span class="p">)</span>
+  <span class="c">#print =&gt;     0 LOAD_GLOBAL              0 (a)</span>
+  <span class="c">#             3 LOAD_GLOBAL              1 (b)</span>
+  <span class="c">#             6 ROT_TWO</span>
+  <span class="c">#             7 STORE_FAST                0 (c)</span>
+  <span class="c">#             10 STORE_FAST               1 (d)</span>
+  <span class="c">#             13 LOAD_CONST               0 (None)</span>
+  <span class="c">#             16 RETURN_VALUE</span></code></pre></figure>
+
+<p>ROT_TWO opcode would just swap the topmost stack elements.</p>
+
+<h3 id="further-reading">Further Reading</h3>
+<ul>
+  <li><a href="https://realpython.com/python-lists-tuples/#python-tuples">Introduction to tuples</a></li>
+  <li><a href="https://docs.python.org/2/library/dis.html">OpCodes in python</a></li>
+</ul>
+
+  </div><a class="u-url" href="/python/2018/09/15/welcome-to-jekyll.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Today I learned</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Today I learned</li><li><a class="u-email" href="mailto:tessyjoseph1999@gmailcom">tessyjoseph1999@gmailcom</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/tessie"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">tessie</span></a></li><li><a href="https://www.twitter.com/tessyjohn92"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">tessyjohn92</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This site is inspired by thoughtbot til https://github.com/thoughtbot/til. This blog is to share what I share what i learned everyday.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
